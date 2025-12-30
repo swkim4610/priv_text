@@ -182,6 +182,14 @@ def apply_masking(text, selected_names):
 st.markdown('<div class="main-header"><h1 style="text-align: center;">🔒 개인정보 마스킹 프로그램</h1></div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-header">텍스트 파일의 개인정보를 안전하게 마스킹합니다</div>', unsafe_allow_html=True)
 
+st.markdown("""
+    <style>
+    [data-testid="stSidebar"][aria-expanded="true"]{
+        min-width: 400px;
+        max-width: 400px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
 # 사이드바 - 정보
 with st.sidebar:
@@ -287,5 +295,6 @@ if uploaded_file is not None:
     </div>
 
     """, unsafe_allow_html=True)
+
 
 
