@@ -208,16 +208,15 @@ with st.sidebar:
 
 
 st.subheader("📁 Step 1: 파일 선택")
-file = st.file_uploader("upload file", type={"csv", "txt"})
-# 파일 읽기
-if file:
-    with st.spinner('📖 파일을 읽는 중...'):
-        with open(file.name, 'r', encoding='utf-8') as f:
-            st.session_state.text = f.read()
-        
-        # 파일 정보 표시
+uploaded_file = st.file_uploader("upload file", type={"csv", "txt"})
+if uploaded_file is not None:
+    try:
+        # 텍스트로 읽기
+        st.session_state.text = uploaded_file.read().decode('utf-8')
         file_size = len(st.session_state.text)
         st.info(f"📊 파일 크기: {file_size:,} 문자")
+    except Exception as e:
+        st.error(f"파일 읽기 오류: {e}")
 
 # 이름 감지
     with st.spinner('🔍 개인정보를 검색하는 중...'):
@@ -286,4 +285,5 @@ if file:
     <div style='text-align: center; color: #888; padding: 1rem;'>
         <small>개인정보 보호를 위한 마스킹 도구 | Made in SleepBetterBaby</small>
     </div>
+
     """, unsafe_allow_html=True)
