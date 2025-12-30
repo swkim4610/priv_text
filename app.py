@@ -260,7 +260,7 @@ if uploaded_file is not None:
         with st.spinner('🔒 마스킹 처리 중...'):
             masked_text = apply_masking(st.session_state.text, selected_names)
             
-            output_filename = 'masked_' + os.path.basename(file.name)
+            output_filename = 'masked_' + uploaded_file.name
             
             try:
                 with open(output_filename, 'w', encoding='utf-8') as file:
@@ -287,4 +287,5 @@ if uploaded_file is not None:
     </div>
 
     """, unsafe_allow_html=True)
+
 
