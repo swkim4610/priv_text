@@ -247,7 +247,7 @@ if uploaded_file is not None:
                 default=True,
             )
         },
-        width='stretch',
+        width=800,
     )
 
     selected_names = edited_df[edited_df['선택']]['이름'].tolist()
@@ -287,3 +287,4 @@ if uploaded_file is not None:
     </div>
 
     """, unsafe_allow_html=True)
+
