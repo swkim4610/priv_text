@@ -185,8 +185,8 @@ st.markdown('<div class="sub-header">텍스트 파일의 개인정보를 안전�
 st.markdown("""
     <style>
     [data-testid="stSidebar"][aria-expanded="true"]{
-        min-width: 400px;
-        max-width: 400px;
+        min-width: 350px;
+        max-width: 350px;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -295,6 +295,7 @@ if uploaded_file is not None:
     </div>
 
     """, unsafe_allow_html=True)
+
 
 
 
