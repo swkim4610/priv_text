@@ -212,8 +212,6 @@ with st.sidebar:
     """)
     
     st.markdown("---")
-    st.caption("🔐 모든 처리는 로컬에서 안전하게 이루어집니다.")
-
 
 st.subheader("📁 Step 1: 파일 선택")
 uploaded_file = st.file_uploader("upload file", type={"csv", "txt"})
@@ -295,6 +293,7 @@ if uploaded_file is not None:
     </div>
 
     """, unsafe_allow_html=True)
+
 
 
 
